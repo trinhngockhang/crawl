@@ -1,0 +1,12 @@
+{
+    "apps": [
+      {
+        "name": "Crawl Spy",
+        "script": "./dist/index.js",
+        "env": {
+          "PORT": 3002
+        }
+      }
+    ]
+  }
+  

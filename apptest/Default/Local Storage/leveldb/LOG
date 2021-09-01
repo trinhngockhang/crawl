@@ -1,0 +1,5 @@
+2021/02/20-09:50:43.846 2c03 Reusing MANIFEST /Users/apple/Documents/Code/Crawl-Spy/crawl/apptest/Default/Local Storage/leveldb/MANIFEST-000001
+2021/02/20-09:50:43.847 2c03 Recovering log #4
+2021/02/20-09:50:43.848 2c03 Level-0 table #7: started
+2021/02/20-09:50:43.868 2c03 Level-0 table #7: 68849 bytes OK
+2021/02/20-09:50:43.887 2c03 Delete type=0 #4
