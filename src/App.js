@@ -9,30 +9,32 @@ import fs from 'fs';
 const crawlNewest = true;
 
 (async () => {
+  dmm.spyDmm(crawlNewest)
   //await updateItem.updateHistoryForTrending();
   console.log('XXx')
-  while(true){
-    try {
-      await Promise.all([
-        spypro.crawlSpypro(crawlNewest),
-        dmm.spyDmm(crawlNewest)
-      ])
-    } catch(e){
+  //await dmm.openBrowser()
+  // while(true){
+  //   try {
+  //     await Promise.all([
+  //       spypro.crawlSpypro(crawlNewest),
+  //       dmm.spyDmm(crawlNewest)
+  //     ])
+  //   } catch(e){
+  //     console.log(e);
+  //   }
+  //   console.log('START CRAWL HISTORY')
+  //   await updateItem.updateHistoryForTrending(true); 
+  //   console.log('DONEEEE')
+  //   await updateItem.updateHistoryForTrending(false); 
+  //   try {
+  //     await Promise.all([
+  //       spypro.crawlSpypro(false),
+  //       dmm.spyDmm(false)
+  //     ])
+  //   } catch(e){
 
-    }
-    console.log('START CRAWL HISTORY')
-    await updateItem.updateHistoryForTrending(true); 
-    console.log('DONEEEE')
-    await updateItem.updateHistoryForTrending(false); 
-    try {
-      await Promise.all([
-        spypro.crawlSpypro(false),
-        dmm.spyDmm(false)
-      ])
-    } catch(e){
-
-    }
-  }
+  //   }
+  // }
  
 })()
 

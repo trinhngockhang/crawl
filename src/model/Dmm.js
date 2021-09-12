@@ -3,6 +3,7 @@ import moment from 'moment';
 
 const item = new mongoose.Schema({
   id: {type: String, unique: true},
+  idPostInfo: { type: String },
   author: { type: String },
   pageId: { type: String, default: null },
   store: { type: String, default: null },

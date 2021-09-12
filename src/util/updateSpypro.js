@@ -159,7 +159,7 @@ try {
   await loop(
     {
       lastUpdateHistory: {
-        $lt: moment(Date.now()).subtract(score? 1: 24, "hours").format(),
+        $lt: moment(Date.now()).subtract(score? 0.2: 24, "hours").format(),
       },
       dataOrigin: "Spypro",
     },

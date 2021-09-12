@@ -15,7 +15,7 @@ export const openBrowser = async () => {
   const browser = await puppeteer.launch({
     userDataDir: "./dmm",
     defaultViewport: null,
-    headless: true,
+    headless: false,
     args:['--no-sandbox']
     // args: ["--proxy-server=socks5://45.32.101.156:28982"],
   });
@@ -82,9 +82,8 @@ export const spyDmm = async (fromBegin) => {
               .href.split("page:")[1];
 
             const store = card.querySelector(".linked-link").innerText;
-            const linkDetail = card.querySelector(".spy3-grid-thumbnail>a")
-              .href;
-            const id = linkDetail.split("&id=")[1];
+            const linkDetail = card.querySelector(".spy3-grid-thumbnail .action-bar .analyze-audience").href;
+            const id = linkDetail.split('analyze-audience/')[1].replace('/', '');
             const platform = card.querySelector(".platform-bar img")?.title;
             const postTime = card.querySelector(".caption span").innerText;
 
@@ -101,7 +100,9 @@ export const spyDmm = async (fromBegin) => {
             let share =
               card.querySelector(".fa-share")?.parentNode?.innerText.trim() ||
               "0";
-
+            const linkDetailPostInfo = card.querySelector(".spy3-grid-thumbnail>a")
+              .href;
+            const idPostInfo = linkDetailPostInfo.split("&id=")[1];
             // lower case
             react = react.toLowerCase();
             comment = comment.toLowerCase();
@@ -116,6 +117,7 @@ export const spyDmm = async (fromBegin) => {
               author,
               store,
               pixel,
+              idPostInfo,
               pageId,
               platform,
               imageUrl,
