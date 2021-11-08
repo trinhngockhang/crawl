@@ -12,6 +12,7 @@ import aws from 'aws-sdk';
 const BUCKET_NAME = "vitaminspy2";
 const REGION = "sgp1.digitaloceanspaces.com";
 const CDN = "https://photos2.vitaminspy.com/"
+aws.config.httpOptions.timeout = 200000;
 
 // Set S3 endpoint to DigitalOcean Spaces
 const spacesEndpoint = new aws.Endpoint(REGION);
